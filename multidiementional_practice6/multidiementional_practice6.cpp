@@ -41,7 +41,6 @@ int main()
         {0, 7, 12, 1}
     };
     int totale = 0;
-    //суми рядків
     for (int i = 0; i < 3; i++) {
         int sum = 0;
         for (int j = 0; j < 4; j++) {
@@ -52,7 +51,6 @@ int main()
         cout << "| " << sum << '\n';
     }
     cout << "-------------------------------------" << '\n';
-    //суми стовпчиків
     for (int j = 0; j < 4; j++) {
         int sum = 0;
         for (int i = 0; i < 3; i++) {
@@ -63,4 +61,25 @@ int main()
     cout << "| " << totale << '\n';
 
     //number 3
+    srand(time(NULL));
+
+    int arr[5][10];
+    int arr2[5][5];
+
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 10; j++) {
+            arr[i][j] = rand() % 51;
+            cout << arr[i][j] << "\t";
+        }
+        cout << '\n';
+    }
+
+    cout << '\n';
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            arr2[i][j] = arr[i][j * 2] + arr[i][j * 2 + 1];
+            cout << arr2[i][j] << "\t";
+        }
+        cout << '\n'; 
+    }
 }
